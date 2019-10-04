@@ -6,12 +6,6 @@ using UnityEngine.SceneManagement;public class GameFinish : MonoBehaviour
 
     public GameObject finishUI;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (GoalChecker.goal == true)        {            finishUI.SetActive(true);        }

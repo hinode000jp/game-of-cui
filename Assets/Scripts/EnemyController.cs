@@ -1,22 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;using UnityStandardAssets.Characters.ThirdPerson;[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
+using UnityEngine.AI;using UnityStandardAssets.Characters.ThirdPerson;[RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(ThirdPersonCharacter))]
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField]
-    Transform target;
-
-    bool isActive = false;
-    NavMeshAgent agent;
-    ThirdPersonCharacter character;
-
-    private EnemyController script;
-    private ThirdPersonUserControl third;
-
-    Rigidbody rb;
+    [SerializeField]    private Transform target;    private bool isActive = false;
+    private NavMeshAgent agent;
+    private ThirdPersonCharacter character;
 
     void Start()
     {
@@ -40,5 +32,5 @@ public class EnemyController : MonoBehaviour
 
     public void SetTarget(Transform target)    {        this.target = target;    }
 
-    private void OnCollisionEnter(Collision other)    {        if (other.gameObject.tag == "Player")        {            Debug.Log("GameOver!");            isActive = false;        }    }
+    private void OnCollisionEnter(Collision other)    {        if (other.gameObject.tag == "Player")        {            Debug.Log("GameOver!");            isActive = false;        }    }
 }
